@@ -13,3 +13,7 @@ Sharpen - Revision 15750 (4/19/11) - https://source.db4o.com/db4o/trunk/sharpen
 
 Requirements:
 NAnt.exe (set path in build-properties.xml)
+
+Sharpen Documentation:
+http://community.versant.com/Blogs/db4o/tabid/197/entryid/95/Default.aspx
+http://community.versant.com/Documentation/Reference/db4o-8.0/net20/reference/index_Left.html#CSHID=sharpen.htm|StartTopic=Content%2Fsharpen.htm|SkinName=RedVersant
