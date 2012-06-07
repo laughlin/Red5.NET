@@ -4,3 +4,10 @@
 *.jar
 *.war
 *.ear
+.svn
+
+red5_server/bin
+red5_server/build
+red5_server/dist
+red5_server/Red5_Server.net
+sharpen.ui.tests/bin-testcases

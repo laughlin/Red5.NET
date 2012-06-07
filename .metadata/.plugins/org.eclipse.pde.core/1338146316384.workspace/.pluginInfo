@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="769" class="sharpen.core.Sharpen" isBundle="false" name="Java To C# Core Plug-in" project="sharpen.core" provider="db4objects Inc.">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="770" class="sharpen.ui.tests.SharpenUITests" isBundle="false" name="Java To C# UI Tests Plug-in" project="sharpen.ui.tests" provider="db4objects Inc.">
+		<library name="sharpenuitests.jar"/>
+	</bundle>
+	<bundle bundleID="771" class="sharpen.builder.Activator" localization="OSGI-INF/l10n/bundle" name="Sharpen Builder Plug-in" project="sharpen.builder" provider="Db4objects">
+		<library name="lib/xstream/xstream-1.1.2.jar"/>
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="772" class="sharpen.ui.SharpenUI" isBundle="false" name="Java To C# UI Plug-in" project="sharpen.ui" provider="db4objects Inc.">
+		<library name="sharpenui.jar"/>
+	</bundle>
+</map>

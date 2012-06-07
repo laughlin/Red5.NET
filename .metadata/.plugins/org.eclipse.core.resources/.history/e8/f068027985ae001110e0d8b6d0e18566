@@ -1,0 +1,8 @@
+<project name="build properties">
+    <property name="sharpen.workspace.dir" value="build" />
+    <property name="eclipse.home" value="c:/eclipse" />
+    <property name="nant.exe" value="c:/dotnet/nant-0.91/bin/NAnt.exe" />
+	<property name="servlet-api.jar" value="lib/activation-1.1.jar"  />
+
+	<property name="server.war.excludes" value="**/*.jsp,org/red5/classloading/**,org/red5/server/script/**,org/red5/server/jetty/**,org/red5/server/tomcat/**,org/red5/server/midi/**,org/red5/server/net/rtmpt/*Loader.java,org/red5/server/net/rtmps/*Loader.java,org/red5/server/net/servlet/RTMPTServlet.java,org/red5/server/net/servlet/StatisticsServlet.java,org/red5/server/net/servlet/ZAMFGatewayServlet.java,org/red5/server/ContextLoader.java,org/red5/server/DebugPooledByteBufferAllocator.java,org/red5/server/Bootstrap.java" />
+</project>

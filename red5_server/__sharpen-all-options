@@ -1,0 +1,18 @@
+@sharpen-collections-mapping
+
+-pascalCase+ 
+-nativeTypeSystem 
+-nativeInterfaces   
+
+-fullyQualify File  
+
+-methodMapping System.out.println System.Console.WriteLine
+
+-typeMapping com.db4o.Db4o Db4objects.Db4o.Db4oFactory
+
+-namespaceMapping com.db4o Db4objects.Db4o 
+-namespaceMapping com.db4odoc Db4objects.Db4odoc 
+-namespaceMapping java Sharpen  
+
+-propertyMapping java.lang.System.out Sharpen.Runtime.Out 
+-propertyMapping java.lang.System.err Sharpen.Runtime.Err

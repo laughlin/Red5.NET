@@ -1,0 +1,176 @@
+<project name="Red5_Server" default="build-dotnet">
+
+    <import file="build-properties.xml" />
+    <import file="sharpen-common.xml" />
+    
+    <target name="build-dotnet" depends="sharpen">
+        <exec executable="${nant.exe}">
+        </exec>
+    </target>
+        
+    <target name="sharpen" depends="init">
+        
+        <prepare-sharpen-workspace project="Red5_Server" dir="${sharpen.workspace.dir}" />
+        
+        <sharpen workspace="${sharpen.workspace.dir}" resource="Red5_Server/src">
+        	<args>
+				<arg value="-pascalCase+"  />
+				<arg value="-organizeUsings" />
+
+				<arg value="-cp" />
+				<arg file="lib/mina-core-2.0.0-M6.jar"  />
+				<arg value="-cp" />
+				<arg file="lib/activation-1.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/annotations-api-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/antlr-3.1.2.jar" />
+				<arg value="-cp" />
+				<arg file="lib/aopalliance-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/asm-3.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/asm-commons-3.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/bcprov-jdk15-139.jar" />
+				<arg value="-cp" />
+				<arg file="lib/catalina-6.0.18.jar" />
+				<arg value="-cp" />
+				<arg file="lib/commons-beanutils-1.8.0.jar" />
+				<arg value="-cp" />
+				<arg file="lib/commons-codec-1.3.jar" />
+				<arg value="-cp" />
+				<arg file="lib/commons-collections-3.2.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/commons-httpclient-3.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/commons-lang-2.4.jar" />
+				<arg value="-cp" />
+				<arg file="lib/commons-modeler-2.0.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/commons-pool-1.4.jar" />
+				<arg value="-cp" />
+				<arg file="lib/ehcache-1.6.0-beta1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/ejb3-persistence-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/el-api-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/groovy-all-1.5.7.jar" />
+				<arg value="-cp" />
+				<arg file="lib/ivy-2.0.0.jar" />
+				<arg value="-cp" />
+				<arg file="lib/ivy-2.1.0-rc1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jasper-6.0.18.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jasper-el-6.0.18.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jasper-jdt-6.0.18.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jaudiotagger-1.0.8.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jcl-over-slf4j-1.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jetty-6.1.9.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jetty-util-6.1.9.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jetty-xbean-6.1.9.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jruby-1.0.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jruby-engine-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/js-1.6R7.jar" />
+				<arg value="-cp" />
+				<arg file="lib/js-engine-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jsp-api-2.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jsr-223-1.0.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jsr173_1.0_api-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jta-1.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jul-to-slf4j-1.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jython-2.5.jar" />
+				<arg value="-cp" />
+				<arg file="lib/jython-engine-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/log4j-over-slf4j-1.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/logback-classic-0.9.14.jar" />
+				<arg value="-cp" />
+				<arg file="lib/logback-core-0.9.14.jar" />
+				<arg value="-cp" />
+				<arg file="lib/mina-core-2.0.0-M6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/mina-integration-beans-2.0.0-M6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/mina-integration-jmx-2.0.0-M6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/naming-factory-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/naming-resources-.jar" />
+				<arg value="-cp" />
+				<arg file="lib/quartz-1.6.5.jar" />
+				<arg value="-cp" />
+				<arg file="lib/servlet-api-2.5.jar" />
+				<arg value="-cp" />
+				<arg file="lib/slf4j-api-1.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/spring-aop-2.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/spring-beans-2.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/spring-context-2.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/spring-context-support-2.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/spring-core-2.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/spring-web-2.5.6.jar" />
+				<arg value="-cp" />
+				<arg file="lib/tomcat-coyote-6.0.18.jar" />
+				<arg value="-cp" />
+				<arg file="lib/tomcat-juli-slf4j-1.5.0.jar" />
+				<arg value="-cp" />
+				<arg file="lib/xercesImpl-2.9.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/xml-apis-2.9.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/xmlrpc-2.0.1.jar" />
+				<arg value="-cp" />
+				<arg file="lib/xuggle-xuggler-5.4.jar" />
+				
+				
+        		<!-- <arg value="javax.servlet" />
+				<arg value="-typeMapping" />
+				<arg value="-namespaceMapping" />
+				
+				<arg file="${db4o.jar}"  />
+				
+				<arg value="-nativeTypeSystem" />
+				<arg value="-nativeInterfaces"  />
+				
+				<arg value="com.db4o.Db4o" />
+				<arg value="Db4objects.Db4o.Db4oFactory" />
+				
+				<arg value="com.db4o" />
+				<arg value="Db4objects.Db4o"  /> -->
+			</args>
+        </sharpen>
+        
+		<copy-sharpen-output todir="Red5_Server.net/converted" fromdir="${sharpen.workspace.dir}/Red5_Server.net/src" />
+    </target>
+    
+    <target name="init">
+        
+        <reset-dir dir="${sharpen.workspace.dir}" />
+        
+    </target>
+    
+</project>

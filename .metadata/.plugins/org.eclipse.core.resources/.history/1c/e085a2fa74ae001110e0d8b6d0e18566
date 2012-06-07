@@ -1,0 +1,26 @@
+<project name="Red5_Server" default="build-dotnet">
+
+    <import file="build-properties.xml" />
+    <import file="sharpen-common.xml" />
+    
+    <target name="build-dotnet" depends="sharpen">
+        <exec executable="${nant.exe}">
+        </exec>
+    </target>
+        
+    <target name="sharpen" depends="init">
+        
+        <prepare-sharpen-workspace project="Red5_Server" dir="${sharpen.workspace.dir}" />
+        
+        <sharpen workspace="${sharpen.workspace.dir}" resource="Red5_Server/src">
+        </sharpen>
+        
+    </target>
+    
+    <target name="init">
+        
+        <reset-dir dir="${sharpen.workspace.dir}" />
+        
+    </target>
+    
+</project>

@@ -1,0 +1,6 @@
+<project name="build properties">
+    <property name="sharpen.workspace.dir" value="build" />
+    <property name="eclipse.home" value="c:/eclipse" />
+    <property name="nant.exe" value="c:/dotnet/nant-0.91/bin/NAnt.exe" />
+	<property name="servlet-api.jar" value="C:/Projects/References/red5flashserver/repository/javax/servlet-api-2.5.jar"  />
+</project>

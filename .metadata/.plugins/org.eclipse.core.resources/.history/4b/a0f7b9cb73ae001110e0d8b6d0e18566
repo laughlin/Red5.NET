@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<project name="Db4objects.Db4odoc" default="sharpen-docs">
+  <property file="sharpen.properties" />
+  <import file="sharpen-common.xml" />
+
+  <taskdef name="updatecsharpproject" 
+classname="com.db4o.devtools.ant.UpdateCSharpProjectAntTask">
+    <classpath>
+      <pathelement location="lib" />
+      <path path="${path.classpath.full}" />
+    </classpath>
+  </taskdef>
+
+  <!-- Main target -->
+  <target name="sharpen-docs" depends="install-sharpen-plugin, clean">
+
+    <property name="target.dir" location="sharpen" />
+
+    <!-- Copy java files to the resource folder -->
+    <copy todir="${target.dir}/sharpened_examples/src">
+      <fileset dir="src">
+        <include name="**/*.java" />
+      </fileset>
+    </copy>
+
+        <!-- Sharpen java files -->
+    <sharpen workspace="${target.dir}" resource="sharpened_examples/src">
+      <args>
+        <!-- classpath needed for java sources compilation -->
+        <arg value="-cp" />
+        <arg path="lib/db4o-7.2.37.10417-java5.jar" />
+        <!-- Sharpen options are defined in a separate file -->
+        <arg value="@sharpen-all-options" />
+      </args>
+    </sharpen>
+
+    <!-- Define locations for the converted resources -->
+    <property name="dir.proj" location="../sharpen-tutorial.net/Db4objects.Db4odoc" />
+    <property name="dir.proj.src" location="../sharpen-tutorial.net/Db4objects.Db4odoc" />
+    <property name="dir.sharpen.src" location="sharpen/sharpened_examples.net" />
+
+        <!-- Task for copying converted resources -->
+    <macrodef name="copy-sharpened-sources">
+      <attribute name="dir" />
+      <element name="files" />
+      <sequential>
+        <copy todir="@{dir}">
+          <files />
+        </copy>
+      </sequential>
+    </macrodef>
+
+    <!-- Copy sharpened file to the destination folder -->
+    <copy-sharpened-sources dir="${dir.proj.src}">
+      <files>
+        <fileset dir="${dir.sharpen.src}/src">
+          <include name="**/*.cs" />
+        </fileset>
+      </files>
+    </copy-sharpened-sources>
+
+    <!-- Define c# resources -->
+    <fileset id="core.net.files" dir="${dir.proj}">
+      <include name="**/*.cs" />
+    </fileset>
+
+    <!-- If we already have a csproj file, we can just update it to include 
+    all the added c# resources -->
+    <updatecsharpproject projectfile="${dir.proj}/sharpen-examples.csproj">
+      <sources refid="core.net.files" />
+    </updatecsharpproject> 
+
+  </target>
+
+  <!-- Remove resources from the previous convertion run -->
+  <target name="clean" description="Delete all generated files">
+    <delete failonerror="false" includeemptydirs="true" 
+description="Removing all generated files">
+      <fileset dir="../reference.cs.net">
+        <include name="**/*" />
+        <exclude name="**/*.csproj" />
+        <exclude name="**/*.sln" />
+      </fileset>
+    </delete>
+    <delete failonerror="false" includeemptydirs="true" 
+description="Removing all generated files">
+      <fileset dir="sharpen">
+        <include name="**/*" />
+        <exclude name="**/lib/*" />
+      </fileset>
+    </delete>
+  </target>
+</project>
